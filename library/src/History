@@ -1,0 +1,4 @@
+Changes
+
+28/8/2017 V0.2   Viji M  changes made in the getConfigureation method in Beacon service
+                         helper. This is to override the webservice call to the DB.

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="in.cm.bcon360.sdk" >
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="25" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name" >
+        <service
+            android:name="in.cm.bcon360.sdk.backend.service.BeaconService"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="in.cm.bcon360.sdk.BeaconService.ACTION" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="in.cm.bcon360.sdk.backend.service.BeaconActionProcessor"
+            android:exported="true" />
+        <service
+            android:name="in.cm.bcon360.sdk.backend.service.BeaconConfigurationChangeProcessor"
+            android:exported="true" />
+        <service
+            android:name="in.cm.bcon360.sdk.backend.service.BeaconProximityChangeProcessor"
+            android:exported="true" />
+
+        <activity android:name="in.cm.bcon360.sdk.backend.events.WebViewActivity" />
+        <activity android:name="in.cm.bcon360.sdk.backend.events.AdDialogActivity" />
+    </application>
+
+</manifest>
